@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+  post_build:
+    commands:
+      - echo Uploading to S3...
+      - aws s3 sync build/ s3://static-site-poc-974086408537
+      - echo Creating CloudFront Invalidation...
+      - aws cloudfront create-invalidation --distribution-id E3IM8I55V993Z9 --paths "/*"
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: build
