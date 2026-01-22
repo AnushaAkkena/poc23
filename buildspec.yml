@@ -16,7 +16,7 @@ phases:
       - echo Uploading to S3...
       - aws s3 sync build/ s3://static-site-poc-222369475350
       - echo Creating CloudFront Invalidation...
-      - aws cloudfront create-invalidation --distribution-id E2IZF250CYTXI1 --paths "/*"
+      - aws cloudfront create-invalidation --distribution-id EBSRIHBV3NE5O --paths "/*"
 
 artifacts:
   files:
