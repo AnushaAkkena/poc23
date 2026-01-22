@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   return (
     <div className="app">
-      <h1> 🚀 AWS Static Website PoC 🚀 </h1>
+      <h1> 🚀🚀 AWS Static Website PoC 🚀🚀 </h1>
       <p>Deployed using CodeBuild, Private S3 and CloudFront (OAC)</p>
 
       <div className="card">
