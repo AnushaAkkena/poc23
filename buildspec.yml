@@ -14,7 +14,6 @@ phases:
   post_build:
     commands:
       - echo Uploading to S3...
-      - aws s3 mb s3://static-site-poc-222369475350
       - aws s3 sync build/ s3://static-site-poc-222369475350 --acl public-read
       - echo Creating CloudFront Invalidation...
       - aws cloudfront create-invalidation --distribution-id E2IZF250CYTXI1 --paths "/*"
